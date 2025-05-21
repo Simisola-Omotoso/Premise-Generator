@@ -1,9 +1,14 @@
-def main():
-    genre = get_genre()
-    keywords = get_keywords()
-    premise = generate_premise(genre, keywords)
+def get_user_input():
+    genre = input("Enter genre: ")
+    keywords = input("Enter keywords (separate by commas): ")
+    return genre, keywords
 
-    print("Ideas: ")
+def main():
+    print("Premise Generator")
+    genre, keywords = get_user_input()
+    print("Generating... ")
+    premise = generate_premise(genre, keywords)
+    print("Story idea: ")
     print(premise)
 
     save_to_file(premise)
